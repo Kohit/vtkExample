@@ -71,6 +71,12 @@ void ClickCallbackFunction(vtkObject* caller, long unsigned int eventId, void* c
 	// Get the interactor like this:
 	//vtkRenderWindowInteractor *iren =
 	//	static_cast<vtkRenderWindowInteractor*>(caller);
+	double windowPosition[3] = { iren->GetEventPosition()[0], iren->GetEventPosition()[1], 0 };
+	vtkWorldPointPicker * wp = vtkWorldPointPicker::New();
+	//wp->Pick(windowPosition, viewXY->GetRenderer());
+	wp->Pick(windowPosition, render);
+	//
+	double * pp = wp->GetPickPosition();
 
 		// get angle between two position
 	if (true) {

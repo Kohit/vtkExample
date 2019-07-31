@@ -22,6 +22,8 @@ TARGET_LINK_LIBRARIES(streamLines ${VTK_LIBRARIES})
 ADD_EXECUTABLE(measure measure.cpp)
 TARGET_LINK_LIBRARIES(measure ${VTK_LIBRARIES})
 
+ADD_EXECUTABLE(drawCurvedLine drawCurvedLine.cpp)
+TARGET_LINK_LIBRARIES(drawCurvedLine ${VTK_LIBRARIES})
 #-----------------------------------------------------------------------------------------------------------------------------------
 # Construct a list of paths containing runtime directories for project applications on Windows.
 # Create two batch files which correctly set up the environment for the application and for Visual Studio.
