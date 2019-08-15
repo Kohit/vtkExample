@@ -57,6 +57,7 @@ void print(const char * title, T * a, int len) {
 }
 int main()
 {
+
 	vtkSmartPointer<vtkRenderWindow> renderWindow =
 		vtkSmartPointer<vtkRenderWindow>::New();
 	renderWindow->AddRenderer(renderer);
@@ -96,7 +97,7 @@ int main()
 vtkImageData * image;
 void load() {
 	vtkMetaImageReader * reader = vtkMetaImageReader::New();
-	reader->SetFileName("C:/Users/Ad/Downloads/cpr/HeadMRVolume.mhd");
+	reader->SetFileName("E:/cpr/HeadMRVolume.mhd");
 	reader->Update();
 
 	iactor->SetInputData(reader->GetOutput());

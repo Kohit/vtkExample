@@ -23,8 +23,47 @@ vtkSmartPointer<vtkRenderer> renderer =
 auto points = vtkSmartPointer<vtkPoints>::New();
 auto lines = vtkSmartPointer<vtkCellArray>::New();
 
+#include <vector>
+class B : public vtkActor {
+	B() {
+
+	}
+public :
+	static B* New() {
+		return new B();
+	}
+	~B() {
+		std::cout << 2;
+	}
+};
+std::vector< vtkSmartPointer<B>> v;
+struct P {
+	double x, y;
+	P(double x_, double y_) :x(x_), y(y_) {}
+};
+
+#include <vtkPointData.h>
+#include <vtkImageViewer2.h>
+void test() {
+	auto b = vtkSmartPointer<B>::New();
+	//b = nullptr;
+	//std::cout << 1;
+
+	v.push_back(b);
+	v.pop_back();
+
+	P p(1,2);
+	std::cout << p.x;
+
+
+	
+}
+
 int main()
 {
+	test();
+	std::cout << 1;
+
 	vtkSmartPointer<vtkActor> actor =
 		vtkSmartPointer<vtkActor>::New();
 
